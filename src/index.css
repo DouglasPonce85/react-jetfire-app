@@ -1,0 +1,18 @@
+#app {
+    max-width: 850px;
+    margin: 0 auto;
+}
+
+nav {
+    padding: 20px 0 20px 0;
+}
+
+.jumbotron {
+    background-color: #3f4f5f;
+    color: #f6ffda;
+    margin-top: 10%;
+}
+
+.content {
+    margin-top: 10%;
+}

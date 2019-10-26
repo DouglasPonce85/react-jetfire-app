@@ -1,9 +1,17 @@
 import React from 'react';
 import { render } from 'react-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
 
-function Hi() {
-    // debugger; Enable this line in order to view the original source maps.
-    return <p>Hi</p>;
-}
+// Webpack will bundle this for us and inject a reference
+// to that bundlec CSS into our index.html file
+import "bootstrap/dist/css/bootstrap.min.css";
 
-render(<Hi />, document.getElementById('app'));
+import App from './components/App';
+import "./index.css";
+
+render(
+    <Router>
+        <App />
+    </Router>,
+    document.getElementById('app')
+);
