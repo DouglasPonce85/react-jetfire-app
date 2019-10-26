@@ -1,5 +1,8 @@
 # Starter Project Setup ~ DouglasPonce85
 
+![alt text](https://news.tfw2005.com/wp-content/uploads/sites/10/2019/08/Siege-Jetfire-092-1278x665.jpg)
+
+
 ## Get Started
 
 1. **Install [Node 8](https://nodejs.org)** or newer. Need to run multiple versions of Node? Use [nvm](https://github.com/creationix/nvm) or [nvm-windows](https://github.com/coreybutler/nvm-windows)
