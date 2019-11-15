@@ -5,12 +5,14 @@ import HomePage from './home/HomePage';
 import AboutPage from './about/AboutPage';
 import Header from './common/Header';
 import PageNotFound from './PageNotFound';
+import SideBar from './common/SideBar';
 
 
 function App() {
     return (
         <div className="container-fluid">
             <Header />
+            <SideBar />
             <Switch>
                 <Route exact path="/" component={ HomePage } />
                 <Route path="/about" component={ AboutPage } />
