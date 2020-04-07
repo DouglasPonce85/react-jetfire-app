@@ -9,7 +9,7 @@ module.exports = {
 
     target: 'web',
 
-    // Source maps for debugging, see the original code
+    // Source maps for debugging, see the original code in the browser
     devtool: 'cheap-module-source-map',
 
     // Apps entry point
@@ -17,7 +17,7 @@ module.exports = {
 
     // Where we want webpack to output code (Normally in dev doesnot outputs code - serves from memory)
     output: {
-        //__dirname gives us the current dir location
+        //__dirname gives us the current directory name
         path: path.resolve(__dirname, "build"),
         publicPath: '/',
         filename: 'bundle.js'
@@ -42,19 +42,21 @@ module.exports = {
         https: false
     },
 
+    // for plugins you specified an array
     plugins: [
         new HtmlWebpackPlugin({
-            template: "src/index.html",
-            favicon: "src/favicon.ico"
+            template: "src/index.html", // where to find our plugin
+            favicon: "src/favicon.ico" // where to find our fav icon
         })
     ],
 
+    // Tell webpack what files to handle by declaring a set of rules
     module: {
         rules: [
             {
-              test: /\.(js|jsx)$/,
-              exclude: /node_modules/,
-              use: ["babel-loader", "eslint-loader"]
+              test: /\.(js|jsx)$/, // work with Js or JSX files
+              exclude: /node_modules/, // Ignore node_modules folder
+              use: ["babel-loader", "eslint-loader"] // Run babel on all of our files. Run eslint first then babel
             },
             {
               test: /(\.css)$/,

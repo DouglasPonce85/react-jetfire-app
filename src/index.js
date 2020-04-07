@@ -1,18 +1,24 @@
 import React from 'react';
 import { render } from 'react-dom';
-import { BrowserRouter as Router } from 'react-router-dom';
+import { Provider } from 'react-redux';
 
-// Webpack will bundle this for us and inject a reference
-// to that bundlec CSS into our index.html file
+// import { syncHistoryWithStore } from 'react-router-redux';
+// import { browserHistory } from 'react-router';
+
+/* BOOTSTRAP */
 import "bootstrap/dist/css/bootstrap.min.css";
 import '@trendmicro/react-sidenav/dist/react-sidenav.css';
+import "./styles/index.css";
 
-import App from './components/App';
-import "./index.css";
+import { store } from './store/index';
+import App from './App';
+
+// Create an enhanced history that syncs navigation events with the store
+// const history = syncHistoryWithStore(browserHistory, store);
 
 render(
-    <Router>
+    <Provider store={store}>
         <App />
-    </Router>,
+    </Provider>,
     document.getElementById('app')
 );
