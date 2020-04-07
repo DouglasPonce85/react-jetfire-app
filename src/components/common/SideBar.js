@@ -1,22 +1,27 @@
+/* eslint react/prop-types: 0 */
+
 import React from 'react';
 import SideNav, { NavItem, NavIcon, NavText } from '@trendmicro/react-sidenav';
 
-
-function SideBar() {
+const SideBar = ({ location, history }) => {
     return (
         <SideNav
-            onSelect={() => {
-                // Add your code here
+            onSelect={(selected) => {
+                const newTo = '/' + selected;
+                console.log('New Route Request >> ', newTo);
+                if (location.pathname !== newTo) {
+                    history.push(newTo);
+                }
             }}
         >
             <SideNav.Toggle />
-            <SideNav.Nav defaultSelected="home">
-                <NavItem eventKey="home">
+            <SideNav.Nav defaultSelected="products">
+                <NavItem eventKey="products">
                     <NavIcon>
-                        <i className="fa fa-fw fa-home" style={{ fontSize: '1.75em' }} />
+                        <i className="fa fa-fw fa-barcode" style={{ fontSize: '1.75em' }} />
                     </NavIcon>
                     <NavText>
-                        Home
+                        Products
             </NavText>
                 </NavItem>
                 <NavItem eventKey="charts">
