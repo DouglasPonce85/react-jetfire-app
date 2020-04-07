@@ -1,5 +1,7 @@
+import home from './homeReducer';
 import products from './productsReducer';
 
 export default {
-  products,
+  home,
+  products
 };
