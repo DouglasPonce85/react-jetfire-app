@@ -38,13 +38,13 @@ const ProductsStyle = styled.div`
     margin: 65px auto;
 `;
 
-export const mapStateToProps = ({ products }) => ({
+const mapStateToProps = ({ products }) => ({
     newOfDay: products.newOfDay,
     message: products.message,
     globalCounter: products.globalCounter
 });
 
-export function mapDispatchToProps(dispatch) {
+function mapDispatchToProps(dispatch) {
     return { actions: bindActionCreators({ ...productsActions }, dispatch) };
 }
 

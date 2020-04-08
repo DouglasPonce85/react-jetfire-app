@@ -33,11 +33,11 @@ const LocationsStyle = styled.div`
     margin: 65px auto;
 `;
 
-export const mapStateToProps = ({ locations }) => ({
+const mapStateToProps = ({ locations }) => ({
     title: locations.title
 });
 
-export function mapDispatchToProps(dispatch) {
+function mapDispatchToProps(dispatch) {
     return { actions: bindActionCreators({ ...locationsActions }, dispatch) };
 }
 
