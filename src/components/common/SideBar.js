@@ -16,32 +16,44 @@ const SideBar = ({ location, history }) => {
         >
             <SideNav.Toggle />
             <SideNav.Nav defaultSelected="products">
+
                 <NavItem eventKey="products">
                     <NavIcon>
                         <i className="fa fa-fw fa-barcode" style={{ fontSize: '1.75em' }} />
                     </NavIcon>
                     <NavText>
                         Products
-            </NavText>
+                    </NavText>
                 </NavItem>
+
+                <NavItem eventKey="locations">
+                    <NavIcon>
+                        <i className="fa fa-fw fa-location-arrow" style={{ fontSize: '1.75em' }} />
+                    </NavIcon>
+                    <NavText>
+                        Locations
+                    </NavText>
+                </NavItem>
+
                 <NavItem eventKey="charts">
                     <NavIcon>
                         <i className="fa fa-fw fa-line-chart" style={{ fontSize: '1.75em' }} />
                     </NavIcon>
                     <NavText>
                         Charts
-            </NavText>
+                    </NavText>
                     <NavItem eventKey="charts/linechart">
                         <NavText>
                             Line Chart
-                </NavText>
+                        </NavText>
                     </NavItem>
                     <NavItem eventKey="charts/barchart">
                         <NavText>
                             Bar Chart
-                </NavText>
+                        </NavText>
                     </NavItem>
                 </NavItem>
+
             </SideNav.Nav>
         </SideNav>
     )
