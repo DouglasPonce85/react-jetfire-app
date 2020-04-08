@@ -7,7 +7,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import '@trendmicro/react-sidenav/dist/react-sidenav.css';
 import "./styles/index.css";
 
-import { store } from './store/index';
+import { store } from './redux-saga/store/index';
 import App from './App';
 
 render(
