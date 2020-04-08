@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
-import * as homeActions from '../actions/homeActions';
+import * as homeActions from '../redux-saga/actions/homeActions';
 
 class Home extends Component {
     updateDateTime = () => {

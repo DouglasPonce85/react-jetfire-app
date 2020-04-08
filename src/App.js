@@ -11,6 +11,7 @@ import AboutPage from './components/about/AboutPage';
 /* CONTAINERS */
 import HomePage from './containers/Home';
 import Products from './containers/Products';
+import Locations from './containers/Locations';
 
 
 class App extends React.Component {
@@ -28,6 +29,7 @@ class App extends React.Component {
                             <Route exact path="/" component={() => <HomePage /> } />
                             <Route path="/about" component={() => <AboutPage /> } />
                             <Route path="/products" component={() => <Products /> } />
+                            <Route path="/locations" component={() => <Locations /> } />
                             <Route component={PageNotFound} />
                         </Switch>
                     </React.Fragment>

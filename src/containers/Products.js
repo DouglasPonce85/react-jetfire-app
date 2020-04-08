@@ -5,7 +5,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import styled from '@emotion/styled';
 
-import * as productsActions from '../actions/productsActions';
+import * as productsActions from '../redux-saga/actions/productsActions';
 
 class Products extends Component {
     componentDidMount() {
@@ -45,8 +45,7 @@ export const mapStateToProps = ({ products }) => ({
 });
 
 export function mapDispatchToProps(dispatch) {
-    const actions = bindActionCreators({ ...productsActions }, dispatch);
-    return { actions };
+    return { actions: bindActionCreators({ ...productsActions }, dispatch) };
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Products);
