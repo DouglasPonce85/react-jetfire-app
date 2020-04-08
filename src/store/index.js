@@ -3,7 +3,6 @@ import { persistStore, persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 
 import middleware, { sagaMiddleware } from './middleware';
-
 import rootSaga from '../redux-saga/sagas/index';
 import rootReducer from '../redux-saga/reducers/index';
 
@@ -37,7 +36,6 @@ const configStore = (initialState = {}) => {
 };
 
 const { store, persistor } = configStore();
-
 global.store = store;
 
 export { store, persistor };
