@@ -3,7 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "start": "webpack-dev-server --config webpack.config.dev.js --port 3000"
+    "start": "run-p start:dev start:api",
+    "start:dev": "webpack-dev-server --config webpack.config.dev.js --port 3000",
+    "prestart:api": "node mock_server/createMockDb.js",
+    "start:api": "node mock_server/apiServer.js"
   },
   "dependencies": {
     "@emotion/core": "^10.0.28",

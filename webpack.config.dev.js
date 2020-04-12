@@ -1,3 +1,4 @@
+const webpack = require("webpack");
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
@@ -44,6 +45,9 @@ module.exports = {
 
     // for plugins you specified an array
     plugins: [
+        new webpack.DefinePlugin({
+            "process.env.API_URL": JSON.stringify("http://localhost:3001")
+        }),
         new HtmlWebpackPlugin({
             template: "src/index.html", // where to find our plugin
             favicon: "src/favicon.ico" // where to find our fav icon
@@ -54,14 +58,14 @@ module.exports = {
     module: {
         rules: [
             {
-              test: /\.(js|jsx)$/, // work with Js or JSX files
-              exclude: /node_modules/, // Ignore node_modules folder
-              use: ["babel-loader", "eslint-loader"] // Run babel on all of our files. Run eslint first then babel
+                test: /\.(js|jsx)$/, // work with Js or JSX files
+                exclude: /node_modules/, // Ignore node_modules folder
+                use: ["babel-loader", "eslint-loader"] // Run babel on all of our files. Run eslint first then babel
             },
             {
-              test: /(\.css)$/,
-              use: ["style-loader", "css-loader"]
+                test: /(\.css)$/,
+                use: ["style-loader", "css-loader"]
             }
-          ]
-     }
+        ]
+    }
 };
