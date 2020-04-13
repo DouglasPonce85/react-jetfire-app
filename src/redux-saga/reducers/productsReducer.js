@@ -1,20 +1,14 @@
 import { actionTypes } from '../constants/productsConstants';
 
 const productsInitialState = {
-    test: 'initial',
-    newOfDay: 'Welcome, Products View!',
-    message: 'Douglas',
-    globalCounter: 0
+    title: 'Products View',
+    productsList: [],
 }
 
 const products = (state = productsInitialState, action) => {
     switch (action.type) {
-
-        case actionTypes.PRODUCTS_REQUEST_NEWS_SUCCESS:
-            return { ...state, newOfDay: action.payload };
-
-        case actionTypes.PRODUCTS_INCREMENT_COUNTER_SUCCESS:
-            return { ...state, globalCounter: action.payload + 1 };
+        case actionTypes.PRODUCTS_LOAD_LIST_SUCCESS:
+                return { ...state, productsList: action.payload };
 
         default:
             return state;

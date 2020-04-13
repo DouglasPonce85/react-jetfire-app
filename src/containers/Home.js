@@ -27,12 +27,12 @@ class Home extends Component {
     }
 }
 
-export const mapStateToProps = ({ home }) => ({
+const mapStateToProps = ({ home }) => ({
     title: home.title,
     currentDate: home.currentDate
 });
 
-export function mapDispatchToProps(dispatch) {
+function mapDispatchToProps(dispatch) {
     const actions = bindActionCreators({ ...homeActions }, dispatch);
     return { actions };
 }

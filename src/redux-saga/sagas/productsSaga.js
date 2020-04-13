@@ -1,27 +1,23 @@
 import { all, put, takeLatest } from 'redux-saga/effects';
 
 import { actionTypes } from '../constants/productsConstants';
+import { getProducts } from '../../api/productsApi';
 
-function* productsNewsListener({ payload }) {
-    console.log('Entered SAGA | productsNewsListener ');
-    yield put({
-        type: actionTypes.PRODUCTS_REQUEST_NEWS_SUCCESS,
-        payload
-    });
-}
+function* loadProductsListListener() {
+    console.log('Entered SAGA | loadProductsListListener() ');
 
-function* incrementCounterListener({ payload }) {
-    console.log('Entered SAGA | incrementCounterListener() ');
+    const productsList = yield getProducts();
+    console.log(productsList)
+
     yield put({
-        type: actionTypes.PRODUCTS_INCREMENT_COUNTER_SUCCESS,
-        payload
+        type: actionTypes.PRODUCTS_LOAD_LIST_SUCCESS,
+        payload: productsList
     });
 }
 
 function *watchAll() {
     yield all([
-        takeLatest(actionTypes.PRODUCTS_REQUEST_NEWS, productsNewsListener),
-        takeLatest(actionTypes.PRODUCTS_INCREMENT_COUNTER, incrementCounterListener)
+        takeLatest(actionTypes.PRODUCTS_LOAD_LIST, loadProductsListListener)
     ]);
 }
 

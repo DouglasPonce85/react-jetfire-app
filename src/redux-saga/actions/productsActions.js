@@ -1,19 +1,9 @@
 import { actionTypes } from '../constants/productsConstants';
 
-export function requestNews() {
-  console.log('Entered PRODUCTS-ACTION... ');
+export function loadProductsList() {
+  console.log('Entered ACTION | actionLoadProductsList... ', loadProductsList);
 
   return {
-    type: actionTypes.PRODUCTS_REQUEST_NEWS,
-    payload: 'Products View Loading Info...'
-  };
-}
-
-export function incrementClicksCounter(globalCounter) {
-  console.log('Entered PRODUCTS-ACTION... ', globalCounter);
-
-  return {
-    type: actionTypes.PRODUCTS_INCREMENT_COUNTER,
-    payload: globalCounter
+    type: actionTypes.PRODUCTS_LOAD_LIST
   };
 }

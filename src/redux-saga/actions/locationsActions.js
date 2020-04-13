@@ -1,9 +1,9 @@
 import { actionTypes } from '../constants/locationsConstants';
 
-export function updateLocationDate(newTitle) {
-  console.log('ACTIONS | LOCATIONS | updateLocationDate()...', newTitle);
+export function locationsLoadList() {
+  console.log('ACTIONS | LOCATIONS | locationsLoadList()...');
   return {
-    type: actionTypes.LOCATIONS_UPDATE_DATE,
-    payload: newTitle
+    type: actionTypes.LOCATIONS_LOAD_LIST,
+    payload: null
   };
 }
