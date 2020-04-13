@@ -10,25 +10,29 @@ import * as productsActions from '../redux-saga/actions/productsActions';
 class Products extends Component {
     componentDidMount() {
         console.log('Products Initial Props...', this.props);
+        this.loadProductsList();
     }
 
-    handleLoadNewOfDay = () => {
-        this.props.actions.requestNews();
+    loadProductsList = () => {
+        this.props.actions.loadProductsList();
     }
 
-    handleIncrementClicksCounter = () => {
-        this.props.actions.incrementClicksCounter(this.props.globalCounter);
+    shouldRenderProducts = () => {
+        return this.props.productsList && this.props.productsList.length > 0;
     }
 
     render() {
         return (
             <ProductsStyle>
-                <h1>{this.props.newOfDay}</h1>
-                <p>Build macros cannot be invoked from a macro context. This means it is impossible
-                    to use a macro to create a class which will provide build macros for other classes.
-                </p>
-                <button onClick={this.handleLoadNewOfDay}>Update Title</button>
-                <button onClick={this.handleIncrementClicksCounter}>{ this.props.globalCounter }</button>
+                <h1>{ this.props.title }</h1>
+                <h4>Create | Update | Delete Locations</h4>
+
+                {
+                    this.shouldRenderProducts() && (
+                        this.props.productsList.map(product =>
+                            <p key={product.id}>Product : { product.name }</p>)
+                    )
+                }
             </ProductsStyle>
         )
     }
@@ -39,9 +43,8 @@ const ProductsStyle = styled.div`
 `;
 
 const mapStateToProps = ({ products }) => ({
-    newOfDay: products.newOfDay,
-    message: products.message,
-    globalCounter: products.globalCounter
+    title: products.title,
+    productsList: products.productsList
 });
 
 function mapDispatchToProps(dispatch) {

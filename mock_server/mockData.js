@@ -72,9 +72,22 @@ const products = [
 ];
 
 const locations = [
-  { id: 1, name: "New York" },
-  { id: 2, name: "Los Angeles" },
-  { id: 3, name: "Nashville" }
+  {
+    id: 1,
+    name: "New York"
+  },
+  {
+    id: 2,
+    name: "Los Angeles"
+  },
+  {
+    id: 3,
+    name: "Nashville"
+  },
+  {
+    id: 4,
+    name: "Ohio"
+  }
 ];
 
 const newProduct = {

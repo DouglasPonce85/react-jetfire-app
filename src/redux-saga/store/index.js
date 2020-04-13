@@ -19,7 +19,12 @@ const reducer = persistReducer(
 const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 const configStore = (initialState = {}) => {
-  const store = createStore(reducer, initialState, composeEnhancer(applyMiddleware(...middleware)));
+  const store =
+    createStore(
+      reducer,
+      initialState,
+      composeEnhancer(applyMiddleware(...middleware))
+    );
 
   sagaMiddleware.run(rootSaga);
 
