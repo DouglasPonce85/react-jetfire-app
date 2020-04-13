@@ -6,6 +6,7 @@ import { connect } from 'react-redux';
 import styled from '@emotion/styled';
 
 import * as productsActions from '../redux-saga/actions/productsActions';
+import ProductsList from '../components/products/ProductsList';
 
 class Products extends Component {
     componentDidMount() {
@@ -25,13 +26,9 @@ class Products extends Component {
         return (
             <ProductsStyle>
                 <h1>{ this.props.title }</h1>
-                <h4>Create | Update | Delete Locations</h4>
-
                 {
-                    this.shouldRenderProducts() && (
-                        this.props.productsList.map(product =>
-                            <p key={product.id}>Product : { product.name }</p>)
-                    )
+                    this.shouldRenderProducts() &&
+                        ( <ProductsList data={this.props.productsList} /> )
                 }
             </ProductsStyle>
         )

@@ -6,7 +6,7 @@ import { getLocations } from '../../api/locationsApi'
 function* locationsLoadListListener() {
     console.log('Entered SAGA | locationsLoadListListener ');
 
-    var locations = yield getLocations();
+    const locations = yield getLocations();
     console.log('LOCATIONS >> ', locations);
 
     yield put({

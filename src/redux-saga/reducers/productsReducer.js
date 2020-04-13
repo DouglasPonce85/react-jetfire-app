@@ -1,7 +1,7 @@
 import { actionTypes } from '../constants/productsConstants';
 
 const productsInitialState = {
-    title: 'Welcome, Products View!',
+    title: 'Products View',
     productsList: [],
 }
 
