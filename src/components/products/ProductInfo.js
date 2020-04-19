@@ -19,11 +19,15 @@ const ProductInfo = (props) => {
 const ProductInfoWrapper = styled.div`
     position: relative;
     padding-top: 100%;
-    border: 1px solid #dfdddd;
     overflow: hidden;
+    border: 1px solid #dfdddd;
+    transition: box-shadow .3s;
+
+    &:hover {
+        box-shadow: 2px 2px 12px rgba(33, 33, 33, .2);
+    }
 
     img {
-        transition: box-shadow .3s;
         position: absolute;
         display: block;
         object-fit: cover;
@@ -33,11 +37,10 @@ const ProductInfoWrapper = styled.div`
         left: 0;
         border-radius: 10px;
         transition: all 0.3s;
-        transform: scale(1);
+        background: #fff;
     }
 
     img:hover {
-         box-shadow: 0 0 11px rgba(33,33,33,.2);
          transform: scale(1.1);
     }
 `;
